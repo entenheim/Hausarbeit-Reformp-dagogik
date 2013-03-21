@@ -1,0 +1,107 @@
+\documentclass[bibtotoc]{scrartcl}   %bibtotoc ist daf?r da, dass das Literaturverzeichnis auch im Inhaltsverzeichnis angezeigt wird, liststotoc ist f?r Abbildungsverzeichnis und Tabellenverzeichnis im Inhaltsverzeichnis
+%\pagestyle{headings} %Kapitel?berschrift und Seitennummer in Kopfzeile (au?er dort, wo neues Kapitel beginnt
+
+
+
+%Paket für ein deutsches Literaturverzeichnis
+% \usepackage{natbib}
+% \bibliographystyle{agsm}
+
+%Paket für ein deutsches Literaturverzeichnis
+\usepackage[authoryear]{natbib}
+
+% \bibliographystyle{natdin}
+\bibliographystyle{natdin}
+
+\bibliographystyle{plainnat}
+
+%\setcounter{secnumdepth}{4} %f?r die Auflistungstiefe im Inhaltsverzeichnis. So w?rde jetzt bis zur 4. Unterteilung alles aufgelistet.
+%\setcounter{tocdepth}{4}
+\usepackage[utf8x]{inputenc}
+%\usepackage[applemac]{inputenc} %setzt Sonderzeichen um
+\usepackage{lmodern} %f?r die Trennung der W?rter
+\usepackage[ngerman]{babel} % f?r die deutsche Beschriftung von z.B. Grafiken
+\usepackage[babel, german=quotes]{csquotes} %Erzeugung von Anführungszeichen durch \enquote{text}
+\usepackage[T1]{fontenc}
+\usepackage{longtable} % erm?glicht mehrseitige Tabellen
+\usepackage{booktabs} % entzerrt die Tabellenzeilen und bietet verschiedene dicke Unterteilungslinien
+\usepackage{graphicx} %um Grafiken einbinden zu k?nnen
+% \usepackage{float} % unterst?tzt bei der Positionierung von Grafiken und Tabellen
+\usepackage{color}
+\definecolor{black}{gray}{0}% 10% gray
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=black, citecolor=black]{hyperref}  %verwandelt alle Kapitel?berschriften, Verweise aufs Literaturverzeichnis und andere Querverweise in PDF Hyperlinks und stellt sie angenehm unauff?llig dar
+\usepackage[normalem]{ulem} % l?sst Unterstreichungen umbrechen
+\usepackage{textcomp}
+\usepackage{multirow}
+\usepackage{pdfpages} %zum Einbinden von PDFs
+\usepackage{url}
+\usepackage{colortbl}
+\usepackage{setspace} %um den Zeilenabstand zu regulieren
+\usepackage{geometry}
+\geometry{a4paper, left=3cm, right=2cm, top=2cm}
+\usepackage{paralist} %braucht man für formatierte Aufzählungen. Mit \begin{compactitem} \item ... und \end{compactitem} bekommt man keine Leerzeichen zwischen den aufgezählten Punkten
+
+
+
+\onehalfspacing
+
+%\hypersetup{linkcolor=black, urlcolor=black} %um URLs nicht rosa anzeigen zu lassen
+
+
+%\usepackage{tocloft}
+
+%\renewcommand{\cftfigpresnum}{Abb. }
+%\renewcommand{\cftfigaftersnum}{:}
+
+%% Befehl fur Literaturverweise mit Seitenangabe
+%% Bsp: \site{Rupp2004}{213}
+\newcommand{\site}[2]{
+  \citep[S. #2]{#1}
+}
+
+% TODO Box
+\usepackage{mdframed}
+\newcommand{\todo}[1]{
+  \vspace{0.2cm}
+  \begin{mdframed}[skipabove=3pt, skipbelow=3pt, backgroundcolor=green]
+    TODO: #1
+  \end{mdframed}
+  \vspace{0.2cm}
+}
+
+\date{\today}
+
+
+\begin{document}
+
+\input{kapitel/titelseite.tex}
+\clearpage
+
+\singlespacing %Inhaltsverzeichnis nur mit 1-Zeiligem Abstand
+\tableofcontents  %Inhaltsverzeichnis
+\thispagestyle{empty}
+\clearpage
+
+\onehalfspacing
+
+\input{kapitel/Einleitung}
+\input{kapitel/Rudolf_Steiner}
+\input{kapitel/Die_Waldorfschule}
+\input{kapitel/Empirische_Studie}
+\input{kapitel/Fazit}
+
+\pagebreak
+
+%\listoffigures %Abbildungsverzeichnis
+%\listoftables %Tabellenverzeichnis
+
+
+% \appendix
+\bibliography{literatur}
+
+% The command \nocite{*} causes all items in the database to be included in the references, regardless of whether or not they are cited in the paper.
+% \nocite{*}
+
+\end{document}
+
+

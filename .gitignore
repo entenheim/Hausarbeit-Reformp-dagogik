@@ -1,0 +1,16 @@
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.lof
+*.lot
+thesis.log
+*.nlo
+*.out
+*.dvi
+*.fls
+*.log
+Hausarbeit.pdf
+expose.pdf
+*.synctex.gz
+*.toc
