@@ -14,3 +14,4 @@ Hausarbeit.pdf
 expose.pdf
 *.synctex.gz
 *.toc
+.DS_Store
